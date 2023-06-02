@@ -2,6 +2,8 @@ package sprint;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.lang.IllegalArgumentException;
 
 public class Usuario implements IAsesoria{
 
@@ -23,14 +25,21 @@ public class Usuario implements IAsesoria{
 		return tiempoTranscurrido.getYears() + " años";
 	}
 	public String getNombre() {
-		return nombre;
+		return nombre;	
 	}
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		if (nombre.length() > 10 && nombre.length() < 50) {
+			this.nombre = nombre;
+		} else {
+			throw new IllegalArgumentException("El nombre del usuario no debe "
+					+ "poseer menos de 10 y más de 50 carácteres.");
+		}
 	}
 	public String getFechaNacimiento() {
-		return fechaNacimiento;
-	}
+		LocalDate fechaNacimientoLocalDate = LocalDate.parse(fechaNacimiento);
+        return fechaNacimientoLocalDate.format(DateTimeFormatter.ofPattern("dd/"
+        		+ "MM/yyyy"));
+    }
 	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
@@ -38,7 +47,13 @@ public class Usuario implements IAsesoria{
 		return run;
 	}
 	public void setRun(int run) {
-		this.run = run;
+		if (run < 99999999 && run > 1000000) {
+			this.run = run;
+		} else {
+			throw new IllegalArgumentException("Ingrese el R.U.N. sin puntos ni"
+					+ " dígito verificador");
+		}
+			
 	}
 //---------------------------------------------------------------------------
 	@Override
