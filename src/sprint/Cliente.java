@@ -5,14 +5,14 @@ public class Cliente extends Usuario {
 	private int rut,
 		sistSalud,
 		edad;
-	
+
 	private String nombres,
 				apellidos,
 				telefono,
 				afp,
 				direccion,
 				comuna;
-	
+
 	public Cliente(String nombre, String fechaNacimiento, int run, int rut, int sistSalud, int edad, String nombres,
 			String apellidos, String telefono, String afp, String direccion, String comuna) {
 		super(nombre, fechaNacimiento, run);
