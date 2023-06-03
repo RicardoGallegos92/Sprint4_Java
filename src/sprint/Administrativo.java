@@ -12,6 +12,32 @@ public class Administrativo extends Usuario{
 	}
 
 	public Administrativo(){};
+	
+//-------------------------------------Validaciones--------	
+	public class validacionArea{
+		public static boolean validarArea(String area) {
+			if (area.isEmpty()) {
+				return false;
+			}
+			if (area.length() <5 || area.length() >20) {
+				return false;
+			}
+
+			return true;
+		}
+		
+		public static boolean validarExperiencia(String experienciaPrevia) {
+			if(experienciaPrevia.isEmpty()) {
+				return false;
+			}
+			if (experienciaPrevia.length() >100) {
+				return false;
+			}
+			return true;
+		}
+	}
+	
+	
 //---------------------------------------------------------------------------
 	public String getArea() {
 		return area;
@@ -39,5 +65,7 @@ public class Administrativo extends Usuario{
 		System.out.println(super.toString() + this.toString());
 	}
 
+//----------------------------------------------------------------------------
+	
 
 }
