@@ -8,7 +8,8 @@ public class Profesional extends Usuario{
 	private String titulo,
 							fechaIngreso;
 
-	public Profesional(String nombre, String fechaNacimiento, int run, String titulo, String fechaIngreso) {
+	public Profesional(String nombre, String fechaNacimiento, int run, 
+			String titulo, String fechaIngreso) {
 		super(nombre, fechaNacimiento, run);
 		this.titulo = titulo;
 		this.fechaIngreso = fechaIngreso;

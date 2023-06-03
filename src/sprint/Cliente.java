@@ -12,9 +12,10 @@ public class Cliente extends Usuario {
 				afp,
 				direccion,
 				comuna;
-
-	public Cliente(String nombre, String fechaNacimiento, int run, int rut, int sistSalud, int edad, String nombres,
-			String apellidos, String telefono, String afp, String direccion, String comuna) {
+	
+	public Cliente(String nombre, String fechaNacimiento, int run, int rut, 
+			int sistSalud, int edad, String nombres, String apellidos, 
+			String telefono, String afp, String direccion, String comuna) {
 		super(nombre, fechaNacimiento, run);
 		this.rut = rut;
 		this.sistSalud = sistSalud;
@@ -48,7 +49,12 @@ public class Cliente extends Usuario {
 		return rut;
 	}
 	public void setRut(int rut) {
-		this.rut = rut;
+		if (rut < 99999999 && rut > 1000000) {
+			this.rut = rut;
+		} else {
+			throw new IllegalArgumentException("Ingrese el R.U.T. sin puntos ni"
+					+ " dígito verificador");
+		}
 	}
 	public int getSistSalud() {
 		return sistSalud;
@@ -60,25 +66,45 @@ public class Cliente extends Usuario {
 		return edad;
 	}
 	public void setEdad(int edad) {
-		this.edad = edad;
+		if (edad >= 0 && edad < 150) {
+			this.edad = edad;
+		} else {
+			throw new IllegalArgumentException("Ingrese su edad correctamente");
+		}
 	}
 	public String getNombres() {
 		return nombres;
 	}
 	public void setNombres(String nombres) {
-		this.nombres = nombres;
+		if (nombres.length() > 5 && nombres.length() < 30) {
+			this.nombres = nombres;
+		} else {
+			throw new IllegalArgumentException("Los nombres del usuario no"
+					+ " deben poseer menos de 5 y más de 30 carácteres.");
+		}
 	}
 	public String getApellidos() {
 		return apellidos;
 	}
 	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
+		if (apellidos.length() > 5 && apellidos.length() < 30) {
+			this.apellidos = apellidos;
+		} else {
+			throw new IllegalArgumentException("Los apellidos del usuario no "
+					+ "deben poseer menos de 5 y más de 30 carácteres.");
+		}
 	}
 	public String getTelefono() {
 		return telefono;
 	}
 	public void setTelefono(String telefono) {
-		this.telefono = telefono;
+		if (telefono.length() == 11 && telefono.startsWith("56")) {
+	        this.telefono = telefono;
+	    } else {
+	        throw new IllegalArgumentException("El número de teléfono debe "
+	        		+ "tener 11 caracteres y comenzar con el código país Chile "
+	        		+ "56.");
+	    }
 	}
 	public String getAfp() {
 		return afp;
@@ -90,13 +116,23 @@ public class Cliente extends Usuario {
 		return direccion;
 	}
 	public void setDireccion(String direccion) {
-		this.direccion = direccion;
+		if (direccion.length() < 70) {
+			this.direccion = direccion;
+		} else {
+			throw new IllegalArgumentException("El domicilio no debe poseer más"
+					+ " de 70 caracteres.");
+		}
 	}
 	public String getComuna() {
 		return comuna;
 	}
 	public void setComuna(String comuna) {
-		this.comuna = comuna;
+		if (comuna.length() < 50) {
+			this.comuna = comuna;
+		} else {
+			throw new IllegalArgumentException("La comuna no debe poseer más de"
+					+ " 50 caracteres.");
+		}
 	}
 //---------------------------------------------------------------------------
 	@Override
