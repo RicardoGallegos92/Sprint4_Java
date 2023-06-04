@@ -70,7 +70,6 @@ public class Capacitacion {
 	public Double duracionMinutos() {
 		return getDuracion()*60;
 	}
-	
 	public void mostrarDetalle() {
 		System.out.println("La capacitación será en : "
 				 + getLugar()+"\n"
@@ -78,6 +77,5 @@ public class Capacitacion {
 				 + "del día: "+getDia()+"\n"
 				 + "y durará: "+duracionMinutos()+"minutos");
 	}
-
 
 }

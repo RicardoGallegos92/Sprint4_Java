@@ -49,12 +49,7 @@ public class Cliente extends Usuario {
 		return rut;
 	}
 	public void setRut(int rut) {
-		if (rut < 99999999 && rut > 1000000) {
-			this.rut = rut;
-		} else {
-			throw new IllegalArgumentException("Ingrese el R.U.T. sin puntos ni"
-					+ " dígito verificador");
-		}
+		this.rut = rut;
 	}
 	public int getSistSalud() {
 		return sistSalud;
@@ -66,45 +61,25 @@ public class Cliente extends Usuario {
 		return edad;
 	}
 	public void setEdad(int edad) {
-		if (edad >= 0 && edad < 150) {
-			this.edad = edad;
-		} else {
-			throw new IllegalArgumentException("Ingrese su edad correctamente");
-		}
+		this.edad = edad;
 	}
 	public String getNombres() {
 		return nombres;
 	}
 	public void setNombres(String nombres) {
-		if (nombres.length() > 5 && nombres.length() < 30) {
-			this.nombres = nombres;
-		} else {
-			throw new IllegalArgumentException("Los nombres del usuario no"
-					+ " deben poseer menos de 5 y más de 30 carácteres.");
-		}
+		this.nombres = nombres;
 	}
 	public String getApellidos() {
 		return apellidos;
 	}
 	public void setApellidos(String apellidos) {
-		if (apellidos.length() > 5 && apellidos.length() < 30) {
-			this.apellidos = apellidos;
-		} else {
-			throw new IllegalArgumentException("Los apellidos del usuario no "
-					+ "deben poseer menos de 5 y más de 30 carácteres.");
-		}
+		this.apellidos = apellidos;
 	}
 	public String getTelefono() {
 		return telefono;
 	}
 	public void setTelefono(String telefono) {
-		if (telefono.length() == 11 && telefono.startsWith("56")) {
-	        this.telefono = telefono;
-	    } else {
-	        throw new IllegalArgumentException("El número de teléfono debe "
-	        		+ "tener 11 caracteres y comenzar con el código país Chile "
-	        		+ "56.");
-	    }
+		this.telefono = telefono;
 	}
 	public String getAfp() {
 		return afp;
@@ -116,23 +91,13 @@ public class Cliente extends Usuario {
 		return direccion;
 	}
 	public void setDireccion(String direccion) {
-		if (direccion.length() < 70) {
-			this.direccion = direccion;
-		} else {
-			throw new IllegalArgumentException("El domicilio no debe poseer más"
-					+ " de 70 caracteres.");
-		}
+		this.direccion = direccion;
 	}
 	public String getComuna() {
 		return comuna;
 	}
 	public void setComuna(String comuna) {
-		if (comuna.length() < 50) {
-			this.comuna = comuna;
-		} else {
-			throw new IllegalArgumentException("La comuna no debe poseer más de"
-					+ " 50 caracteres.");
-		}
+		this.comuna = comuna;
 	}
 //---------------------------------------------------------------------------
 	@Override

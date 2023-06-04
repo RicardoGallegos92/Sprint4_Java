@@ -2,8 +2,6 @@ package sprint;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.time.format.DateTimeFormatter;
-import java.lang.IllegalArgumentException;
 
 public class Usuario implements IAsesoria{
 
@@ -28,17 +26,10 @@ public class Usuario implements IAsesoria{
 		return nombre;	
 	}
 	public void setNombre(String nombre) {
-		if (nombre.length() > 10 && nombre.length() < 50) {
-			this.nombre = nombre;
-		} else {
-			throw new IllegalArgumentException("El nombre del usuario no debe "
-					+ "poseer menos de 10 y más de 50 carácteres.");
-		}
+		this.nombre = nombre;
 	}
 	public String getFechaNacimiento() {
-		LocalDate fechaNacimientoLocalDate = LocalDate.parse(fechaNacimiento);
-        return fechaNacimientoLocalDate.format(DateTimeFormatter.ofPattern("dd/"
-        		+ "MM/yyyy"));
+		return fechaNacimiento;
     }
 	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
@@ -47,13 +38,7 @@ public class Usuario implements IAsesoria{
 		return run;
 	}
 	public void setRun(int run) {
-		if (run < 99999999 && run > 1000000) {
-			this.run = run;
-		} else {
-			throw new IllegalArgumentException("Ingrese el R.U.N. sin puntos ni"
-					+ " dígito verificador");
-		}
-			
+		this.run = run;			
 	}
 //---------------------------------------------------------------------------
 	@Override

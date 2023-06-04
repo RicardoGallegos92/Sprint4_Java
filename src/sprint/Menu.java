@@ -8,34 +8,38 @@ public class Menu {
 		int opcion = 0;
 		Scanner scan = new Scanner(System.in);
 		do {
-			System.out.println("_______________________________");
-			System.out.println("_[1] Almacer Cliente___________");
-			System.out.println("_[2] Almacenar Profesional_____");
-			System.out.println("_[3] Almacenar Administrativo__");
-			System.out.println("_[4] Almacenar Capacitacion____");
-			System.out.println("_[5] Eliminar Usuario__________");
-			System.out.println("_[6] Listar Usuarios___________");
-			System.out.println("_[7] Listar Usuarios por tipo__");
-			System.out.println("_[8] Listar Capacitaciones_____");
-			System.out.println("_[9] Salir_____________________");
-			System.out.println("_______________________________");
+			System.out.println("*******************************");
+			System.out.println("*[1] Almacer Cliente          *");
+			System.out.println("*[2] Almacenar Profesional    *");
+			System.out.println("*[3] Almacenar Administrativo *");
+			System.out.println("*[4] Almacenar Capacitacion   *");
+			System.out.println("*[5] Eliminar Usuario         *");
+			System.out.println("*[6] Listar Usuarios          *");
+			System.out.println("*[7] Listar Usuarios por tipo *");
+			System.out.println("*[8] Listar Capacitaciones    *");
+			System.out.println("*[9] Salir                    *");
+			System.out.println("*******************************");
 			try {
 				opcion =  Integer.parseInt( scan.nextLine() );
 				switch ( opcion ) {
 				case 1:
-					System.out.println("Falta funcion Cliente");
+//					System.out.println("Falta funcion Cliente");
+					SolicitarDatos.cliente();
 //					sintenedor.almacenarCliente();
 					break;
 				case 2:
-					System.out.println("Falta funcion Profesional");
+//					System.out.println("Falta funcion Profesional");
+					SolicitarDatos.profesional();
 //					sintenedor.almacenarProfesional();
 					break;
 				case 3:
-					System.out.println("Falta funcion  Admin");
+//					System.out.println("Falta funcion  Admin");
+					SolicitarDatos.admin();
 //					sintenedor.almacenarAdministrativo();
 					break;
 				case 4:
-					System.out.println("Falta funcion Capacitacion ");
+//					System.out.println("Falta funcion Capacitacion ");
+					SolicitarDatos.capacitacion();
 //					sintenedor.almacenarCapacitacion();
 					break;
 				case 5:
@@ -51,11 +55,12 @@ public class Menu {
 //					sintenedor.listarUsuarioTipo();
 					break;
 				case 8:
-					System.out.println("Falta funcion Capaciitaciones");
+					System.out.println("Falta funcion Capacitaciones");
 //					sintenedor.listarCapacitacion();
 					break;
 				case 9:
-					System.out.println("Adiosin");
+					System.out.println("Adiosin ;D");
+					scan.close();
 					return;
 				default:
 					opcion = 2/0;
@@ -64,6 +69,5 @@ public class Menu {
 				System.out.println("Opción inválida ÒwÓ");
 			}
 		} while (true);
-
 	}
 }
