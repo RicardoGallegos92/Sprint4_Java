@@ -41,9 +41,10 @@ public class Contenedor extends SolicitarDatos{
 			}			
 		} while ( true );
 		
-		for ( Usuario individuo : asesorias ) {
-			if ( individuo.getRun() == run ) {
+		for ( int i = 0; i < asesorias.size(); ++i ) {
+			if ( asesorias.get(i).getRun() == run ) {
 				System.out.println( "Borranding" );
+				asesorias.remove(i);				
 				break;
 			}
 		}
