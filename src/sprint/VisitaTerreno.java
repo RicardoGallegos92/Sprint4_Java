@@ -1,17 +1,21 @@
 package sprint;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class VisitaTerreno {
 
-	private String idVisitaTerreno,
-							dia, //formato fecha
-							hora,
+	private String id,
 							lugar,
 							comentarios;
-	private int rut; 
+	private int rut;
+	
+	private LocalDate dia;
+	private LocalTime hora;	
 
-	public VisitaTerreno(String idVisitaTerreno, int rut, String dia,
-											String hora, String lugar, String comentarios) {
-		this.idVisitaTerreno = idVisitaTerreno;
+	public VisitaTerreno(String id, int rut, LocalDate dia,
+			LocalTime hora, String lugar, String comentarios) {
+		this.id = id;
 		this.dia = dia;
 		this.hora = hora;
 		this.lugar = lugar;
@@ -20,11 +24,11 @@ public class VisitaTerreno {
 
 	public VisitaTerreno() {}
 
- 	public String getIdVisitaTerreno() {
-		return idVisitaTerreno;
+ 	public String getid() {
+		return id;
 	}
-	public void setIdVisitaTerreno(String idVisitaTerreno) {
-		this.idVisitaTerreno = idVisitaTerreno;
+	public void setid(String id) {
+		this.id = id;
 	}
 	public int getRut() {
 		return rut;
@@ -32,16 +36,16 @@ public class VisitaTerreno {
 	public void setRut(int rut) {
 		this.rut = rut;
 	}
-	public String getDia() {
+	public LocalDate getDia() {
 		return dia;
 	}
-	public void setDia(String dia) {
+	public void setDia(LocalDate dia) {
 		this.dia = dia;
 	}
-	public String getHora() {
+	public LocalTime getHora() {
 		return hora;
 	}
-	public void setHora(String hora) {
+	public void setHora(LocalTime hora) {
 		this.hora = hora;
 	}
 	public String getLugar() {
@@ -57,4 +61,18 @@ public class VisitaTerreno {
 		this.comentarios = comentarios;
 	}
 
+	@Override
+	public String toString() {
+		return "VisitaTerreno:"
+				+ "\nID :" + id
+				+ "\nLugar: " + lugar
+				+ "\nComentarios: " + comentarios
+				+ "\nRUT: " + rut
+				+ "\nDia=" + dia
+				+ "\nHora=" + hora
+				+ "\n_______________________________________";
+	}
+
+	
+	
 }

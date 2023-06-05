@@ -1,5 +1,7 @@
 package sprint;
 
+import java.time.LocalDate;
+
 public class Cliente extends Usuario {
 
 	private int sistSalud;
@@ -10,7 +12,7 @@ public class Cliente extends Usuario {
 				direccion,
 				comuna;
 	
-	public Cliente(String nombres, String fechaNacimiento, int run,
+	public Cliente(String nombres, LocalDate fechaNacimiento, int run,
 			String apellidos, String telefono, String afp, int sistSalud,
 			String direccion, String comuna) {
 		super(nombres, fechaNacimiento, run);
@@ -27,11 +29,6 @@ public class Cliente extends Usuario {
 	public String obtenerNombre() {
 		return super.getNombres() + " " + apellidos;
 	}
-	
-	public int calcularEdad() {
-//		return LocalDate.now() - super.getFechaNacimiento();
-		return 1;
-	}
 
 	public String obtenerSistemaSalud() {
 		switch (this.sistSalud) {
@@ -40,8 +37,16 @@ public class Cliente extends Usuario {
 			case 2:
 				return "Sistema Isapre";
 		}
+		return "";
 	}
-//---------------------------------------------------------------------------
+	
+	@Override
+	public void analizarUsuario() {
+		super.analizarUsuario();
+		System.out.println( "Direccion: " + getDireccion() + ", " + getComuna() );	
+	}
+
+	//---------------------------------------------------------------------------
 	public int getSistSalud() {
 		return sistSalud;
 	}
@@ -82,22 +87,16 @@ public class Cliente extends Usuario {
 	@Override
 	public String toString() {
 		return "Cliente:\n"
-				+ super.toString()
-				+ "\nApellidos: " + apellidos
-				+ "\nSistSalud: " + sistSalud
-				+ "\nEdad: " +	calcularEdad()
+				+ "\nNombre: " + obtenerNombre()
+				+ "\nRUN: " + super.getRun()
+				+ "\nFecha Nacimiento: " + super.getFechaNacimiento()
+				+ "\nEdad: " +	super.mostrarEdad()
+				+ "\nSistSalud: " + obtenerSistemaSalud()
 				+ "\nTelefono: " + telefono
 				+ "\nAFP: " + afp
 				+ "\nDireccion: " + direccion
 				+ "\nComuna: " + comuna
-				+ "\n----------------------------------------------------------------"
-				;
-	}
-	
-	@Override
-	public void analizarUsuario() {
-		System.out.println(super.toString()
-				+ this.toString());
+				+ "\n_______________________________________";
 	}
 
 }

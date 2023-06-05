@@ -1,15 +1,14 @@
 package sprint;
 
 import java.time.LocalDate;
-import java.time.Period;
 
 public class Usuario implements IAsesoria{
 
-	private String nombres,
-							fechaNacimiento;
+	private String nombres;
+	private LocalDate fechaNacimiento;
 	private int run;
 	
-	public Usuario(String nombres, String fechaNacimiento, int run) {
+	public Usuario(String nombres, LocalDate fechaNacimiento, int run) {
 		this.nombres = nombres;
 		this.fechaNacimiento = fechaNacimiento;
 		this.run = run;
@@ -17,21 +16,16 @@ public class Usuario implements IAsesoria{
 	
 	public Usuario() {}
 // Setter y Getter
-	public String mostrarEdad() {
-		LocalDate nacimiento = LocalDate.parse(fechaNacimiento);
-		Period tiempoTranscurrido = Period.between(nacimiento, LocalDate.now());
-		return tiempoTranscurrido.getYears() + " años";
-	}
 	public String getNombres() {
 		return nombres;	
 	}
 	public void setNombres(String nombres) {
 		this.nombres = nombres;
 	}
-	public String getFechaNacimiento() {
+	public LocalDate getFechaNacimiento() {
 		return fechaNacimiento;
     }
-	public void setFechaNacimiento(String fechaNacimiento) {
+	public void setFechaNacimiento(LocalDate fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 	public int getRun() {
@@ -43,16 +37,21 @@ public class Usuario implements IAsesoria{
 //---------------------------------------------------------------------------
 	@Override
 	public void analizarUsuario() {
-		System.out.println("Nombres: "+this.nombres);
+		System.out.println("Nombres: " + this.nombres + "\nRun: " + this.run);
+	}
+	
+	public String mostrarEdad() {
+		return 
+				( LocalDate.now().getYear() - getFechaNacimiento().getYear() )
+				+ " años";
 	}
 
 	@Override
 	public String toString() {
 		return "Nombres: " + nombres
-					+ "\nFechaNacimiento: "	+ fechaNacimiento
+					+ "\nFechaNacimiento: " + fechaNacimiento
 					+ "\nRun: " + run
-//					+"\n----------------------------------------------------------------"
-					;
+					+ "\n_______________________________________";
 	}
 
 }

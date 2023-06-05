@@ -41,7 +41,7 @@ public class Contenedor extends SolicitarDatos{
 			}			
 		} while ( true );
 		
-		for ( IAsesoria individuo : asesorias ) {
+		for ( Usuario individuo : asesorias ) {
 			if ( individuo.getRun() == run ) {
 				System.out.println( "Borranding" );
 				break;
@@ -54,17 +54,19 @@ public class Contenedor extends SolicitarDatos{
 			System.out.println( individuo.toString() );
 		}
 	}
-// NO funca
+// funciona
 	public void listarUsuariosTipo () {
 		boolean seguir = true;
 		String txt;
+		Scanner scan = new Scanner(System.in);
 		do {
 			System.out.println("[1] Clientes");
 			System.out.println("[2] Profesionales");
 			System.out.println("[3] Administrativos");
 			System.out.println("Seleccione tipo a mostrar:");
 			try {
-				switch ( Integer.parseInt( new Scanner(System.in).toString() ) ) {
+				txt = scan.nextLine();
+				switch ( Integer.parseInt( txt ) ) {
 					case 1:
 						txt = "Cliente";
 						break;
@@ -85,7 +87,7 @@ public class Contenedor extends SolicitarDatos{
 				}
 				seguir = false;
 			} catch( Exception e ) {
-				System.out.println("-_-ª");
+				System.out.println( e );
 			}
 		} while ( seguir );
 	}

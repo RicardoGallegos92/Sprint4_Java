@@ -23,40 +23,28 @@ public class Menu {
 				opcion =  Integer.parseInt( scan.nextLine() );
 				switch ( opcion ) {
 				case 1:
-//					System.out.println("Falta funcion Cliente");
-//					SolicitarDatos.cliente();
 					sintenedor.almacenarCliente();
-					System.out.println( sintenedor.toString() );
+//					System.out.println( sintenedor.toString() );
 					break;
 				case 2:
-//					System.out.println("Falta funcion Profesional");
-//					SolicitarDatos.profesional();
 					sintenedor.almacenarProfesional();
 					break;
 				case 3:
-//					System.out.println("Falta funcion  Admin");
-//					SolicitarDatos.admin();
 					sintenedor.almacenarAdministrativo();
 					break;
 				case 4:
-//					System.out.println("Falta funcion Capacitacion ");
-//					SolicitarDatos.capacitacion();
 					sintenedor.almacenarCapacitacion();
 					break;
 				case 5:
-//					System.out.println("Falta funcion Eliminar User");
 					sintenedor.eliminaUsuario();
 					break;
 				case 6:
-//					System.out.println("Falta funcion Lista User");
 					sintenedor.listarUsuarios();
 					break;
 				case 7:
-//					System.out.println("Falta funcion Lista por Tipo");
 					sintenedor.listarUsuariosTipo();
 					break;
 				case 8:
-//					System.out.println("Falta funcion Capacitaciones");
 					sintenedor.listarCapacitacion();
 					break;
 				case 9:

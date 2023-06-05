@@ -1,25 +1,29 @@
 package sprint;
 
+import java.time.LocalTime;
+
 public class Capacitacion {
 	private String dia,		// [Lunes...Domingo]
-				hora,  // HH:MM
 				lugar // length [10-50] 
 				;
+	
+	private LocalTime hora;   // HH:MM
+	
 	private int rutCliente, // validacion de rango
-						identificador, // id propio de la empresa
+						id, // id propio de la empresa
 						cantidadAsistentes; // [0-1000[
 
 	private double duracion; // cantidad  en horas ( 2 / 1.5 )
 	
 	public Capacitacion() {}
 	
-	public Capacitacion( int identificador, int rutCliente,String dia,
-			String hora, String lugar, double duracion, int cantidadAsistentes ) {
+	public Capacitacion( int id, int rutCliente,String dia,
+			LocalTime hora, String lugar, double duracion, int cantidadAsistentes ) {
 		this.dia = dia;
 		this.hora = hora;
 		this.lugar = lugar;
 		this.rutCliente = rutCliente;
-		this.identificador = identificador;
+		this.id = id;
 		this.cantidadAsistentes = cantidadAsistentes;
 		this.duracion = duracion;
 	}	
@@ -47,11 +51,11 @@ public class Capacitacion {
 		this.dia = dia;
 	}
 
-	public String getHora() {
+	public LocalTime getHora() {
 		return hora;
 	}
 
-	public void setHora(String hora) {
+	public void setHora(LocalTime hora) {
 		this.hora = hora;
 	}
 
@@ -71,12 +75,12 @@ public class Capacitacion {
 		this.rutCliente = rutCliente;
 	}
 
-	public int getIdentificador() {
-		return identificador;
+	public int getid() {
+		return id;
 	}
 
-	public void setIdentificador(int identificador) {
-		this.identificador = identificador;
+	public void setid(int id) {
+		this.id = id;
 	}
 
 	public int getCantidadAsistentes() {
@@ -98,14 +102,14 @@ public class Capacitacion {
 	@Override
 	public String toString() {
 		return "Capacitacion:"
-				+ "\n dia: " + dia
-				+ "\n hora=" + hora
-				+ "\n lugar=" + lugar
-				+ "\n rutCliente=" + rutCliente
-				+ "\n identificador=" + identificador
-				+ "\n cantidadAsistentes=" + cantidadAsistentes
-				+ "\n duracion=" + duracion
-				+ "\n----------------------------------------------------------------"
+				+ "\nDia: " + dia
+				+ "\nHora: " + hora
+				+ "\nLugar: " + lugar
+				+ "\nRut Cliente: " + rutCliente
+				+ "\nID: " + id
+				+ "\nCantidad Asistentes: " + cantidadAsistentes
+				+ "\nDuracion: " + duracion
+				+ "\n_______________________________________"
 				;
 	}
 

@@ -1,13 +1,15 @@
 package sprint;
 
+import java.time.LocalDate;
 
 public class Profesional extends Usuario{
 
-	private String titulo,
-							fechaIngreso;
+	private String titulo;
 
-	public Profesional(String nombre, String fechaNacimiento, int run, 
-			String titulo, String fechaIngreso) {
+	private LocalDate fechaIngreso;
+
+	public Profesional(String nombre, LocalDate fechaNacimiento, int run, 
+			String titulo, LocalDate fechaIngreso) {
 		super(nombre, fechaNacimiento, run);
 		this.titulo = titulo;
 		this.fechaIngreso = fechaIngreso;
@@ -24,10 +26,10 @@ public class Profesional extends Usuario{
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-	public String getFechaIngreso() {
+	public LocalDate getFechaIngreso() {
 		return fechaIngreso;
 	}
-	public void setFechaIngreso(String fechaIngreso) {
+	public void setFechaIngreso(LocalDate fechaIngreso) {
 		this.fechaIngreso = fechaIngreso;
 	}
 
@@ -43,8 +45,9 @@ public class Profesional extends Usuario{
 	
 	@Override
 	public void analizarUsuario() {
-		System.out.println(super.toString()
-				+ this.toString());
+		super.analizarUsuario();
+		System.out.println("Titulo = " + getTitulo()
+											+ "\nFecha Ingreso = " + getFechaIngreso());	
 	}	
 	
 }

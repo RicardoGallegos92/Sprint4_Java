@@ -1,11 +1,14 @@
 package sprint;
 
+import java.time.LocalDate;
+
 public class Administrativo extends Usuario{
 	
 	private String area,
 							experienciaPrevia;
 	
-	public Administrativo(String nombre, String fechaNacimiento, int run, String area, String experienciaPrevia) {
+	public Administrativo(String nombre, LocalDate fechaNacimiento, int run,
+												String area, String experienciaPrevia) {
 		super(nombre, fechaNacimiento, run);
 		this.area = area;
 		this.experienciaPrevia = experienciaPrevia;
@@ -35,13 +38,15 @@ public class Administrativo extends Usuario{
 		return "Administrativo:\n"
 				+ super.toString()
 				+ "\nArea: " + area
-				+ "\nExperienciaPrevia: " + experienciaPrevia
+				+ "\nExperiencia Previa: " + experienciaPrevia
 				+ "\n----------------------------------------------------------------";
 	}	
 	
 	@Override
 	public void analizarUsuario() {
-		System.out.println(super.toString() + this.toString());
+		super.analizarUsuario();
+		System.out.println( "Area: " + area
+				+ "\nExperiencia Previa: " + experienciaPrevia );
 	}
 
 //----------------------------------------------------------------------------
