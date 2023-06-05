@@ -14,7 +14,8 @@ public class Accidente {
 	
 //Constructors
 	
-	public Accidente(int id, int rutCliente, LocalDate fechaAccidente, LocalTime horaAccidente, String lugar,
+	public Accidente(int id, int rutCliente, LocalDate fechaAccidente,
+			LocalTime horaAccidente, String lugar,
 			String origen, String consecuencias) {
 		this.id = id;
 		this.rutCliente = rutCliente;

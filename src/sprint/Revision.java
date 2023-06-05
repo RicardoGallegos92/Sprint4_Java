@@ -6,6 +6,18 @@ public class Revision {
 			idVisitaTerreno;
 	String nombreRevision, detalleRevision;
 	
+	
+	
+	public Revision( int id, int idVisitaTerreno, int estado,
+			String nombreRevision, String detalleRevision ) {
+		super();
+		this.estado = estado;
+		this.id = id;
+		this.idVisitaTerreno = idVisitaTerreno;
+		this.nombreRevision = nombreRevision;
+		this.detalleRevision = detalleRevision;
+	}
+	
 	public int getEstado() {
 		return estado;
 	}
@@ -46,6 +58,7 @@ public class Revision {
 		case 3:
 			return "No Aprueba";
 		}
+		return "Este texto no es visible";
 	}
 	
 	@Override

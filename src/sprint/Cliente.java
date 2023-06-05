@@ -1,8 +1,11 @@
 package sprint;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Cliente extends Usuario {
+	private ArrayList<Accidente> accidentes;
+	private ArrayList<VisitaTerreno> visitas;
 
 	private int sistSalud;
 
@@ -22,6 +25,8 @@ public class Cliente extends Usuario {
 		this.afp = afp;
 		this.direccion = direccion;
 		this.comuna = comuna;
+		this.accidentes = new ArrayList<Accidente>();
+		this.visitas = new ArrayList<VisitaTerreno>();
 	}
 
 	public Cliente () {}
@@ -83,7 +88,22 @@ public class Cliente extends Usuario {
 	public void setComuna(String comuna) {
 		this.comuna = comuna;
 	}
+	public ArrayList<Accidente> getAccidentes() {
+		return accidentes;
+	}
+	public void setAccidentes(ArrayList<Accidente> accidentes) {
+		this.accidentes = accidentes;
+	}
+	public ArrayList<VisitaTerreno> getVisitas() {
+		return visitas;
+	}
+	public void setVisitas(ArrayList<VisitaTerreno> visitas) {
+		this.visitas = visitas;
+	}
 //---------------------------------------------------------------------------
+	
+	public String 
+	
 	@Override
 	public String toString() {
 		return "Cliente:\n"

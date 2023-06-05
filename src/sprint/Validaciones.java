@@ -9,7 +9,7 @@ public class Validaciones {
 
 //________________Booleanos_____________________
 // Validacion general por longitud si cumple los parametros ]min , max[
-	// min será 0 si el campo es obligatorio, 1 si no lo es.
+	// min será 0 si el campo no es obligatorio, 1 si lo es.
 	public static boolean largoValido(String texto, int largoMinimo, int largoMaximo) {
 		if ( texto.length() > largoMinimo-1 && texto.length() < largoMaximo+1 ) {
 			return true;
@@ -191,6 +191,33 @@ public class Validaciones {
 	public static boolean accidenteLugar(String lugar) {
 		return largoValido(lugar, 10, 50);
 	}
+	
+//______________________Revision_________________
+	
+		public static boolean revisionID (int id){
+			if ( Integer.signum(id) != -1 ) {
+				return true;
+			}
+			return false;
+		}
+		
+		public static boolean nombreRevision(String nRevision) {
+			return largoValido(nRevision,10,50);
+		}
+
+		public static boolean detalle(String detalle) {
+			return largoValido (detalle,1,100);
+		}
+		
+		public static boolean estadoRevision( int estado ) {
+			switch (estado) {
+				case 1:
+				case 2:
+				case 3:
+					return true;
+			}
+			return false;
+		}
 
 
 

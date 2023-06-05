@@ -64,6 +64,12 @@ public class VisitaTerreno {
 		this.comentarios = comentarios;
 	}
 
+//____________________________________________________
+	
+	public void crearRevision() {
+		this.revisiones.add(SolicitarDatos.revision());
+	}
+	
 	@Override
 	public String toString() {
 		return "VisitaTerreno:"

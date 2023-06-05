@@ -335,7 +335,11 @@ public class SolicitarDatos extends Validaciones{
 		accident = new Accidente(
 						id,
 						rutCliente,
-						
+						fechaAccidente,
+						hora,
+						lugar,
+						origen,
+						consecuencias
 						);
 		
 		return accident;		
@@ -346,7 +350,50 @@ public class SolicitarDatos extends Validaciones{
 	}
 	
 	public static Revision revision() {
+		Revision revision;
+		int numero,idRevision,idVisitaTerreno,estadoRevision;
+		String input,nombreRevision,detalle;
+
+//	ID REVISION
+		do {
+			numero =  pedirNumero("Identificador de Revision");
+		} while ( ! Validaciones.revisionID(numero) );
+		idRevision = numero;
 		
+		//id visita en terreno
+		
+		do {
+			numero =  pedirNumero("Identificador visita en terreno");
+		} while ( ! Validaciones.revisionID(numero) );
+		idVisitaTerreno = numero;
+		
+		//nombre min 10 max 50
+		do {
+			input = pedirTexto("Detalle");
+		} while ( ! Validaciones.nombreRevision(input) );
+		nombreRevision = input;
+		
+		//detalle para revisar 100 max
+		
+		do {
+			input = pedirTexto("Detalle");
+		} while ( ! Validaciones.detalle(input) );
+		detalle = input;
+		
+		//estado 1 sin problemas 2 con observaciones 3 no aprueba (booleano
+		do {
+			numero =  pedirNumero("[1] Sin problemas\n[2] Con Observaciones\n[3] No aprueba");
+		} while ( ! Validaciones.estadoRevision(numero) );
+		estadoRevision = numero;
+		
+		revision = new Revision (
+				idRevision,
+				idVisitaTerreno,
+				estadoRevision,
+				nombreRevision,
+				detalle);
+		
+		return revision;
 	}
 
 }
