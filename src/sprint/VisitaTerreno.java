@@ -7,15 +7,14 @@ import java.util.ArrayList;
 public class VisitaTerreno {
 	private ArrayList<Revision> revisiones;
 
-	private String id,
-							lugar,
+	private String lugar,
 							comentarios;
-	private int rut;
+	private int id, rut;
 	
 	private LocalDate dia;
 	private LocalTime hora;	
 
-	public VisitaTerreno(String id, int rut, LocalDate dia,
+	public VisitaTerreno(int id, int rut, LocalDate dia,
 			LocalTime hora, String lugar, String comentarios) {
 		this.id = id;
 		this.dia = dia;
@@ -27,10 +26,10 @@ public class VisitaTerreno {
 
 	public VisitaTerreno() {}
 
- 	public String getid() {
+ 	public int getid() {
 		return id;
 	}
-	public void setid(String id) {
+	public void setid(int id) {
 		this.id = id;
 	}
 	public int getRut() {
@@ -82,6 +81,5 @@ public class VisitaTerreno {
 				+ "\n_______________________________________";
 	}
 
-	
 	
 }

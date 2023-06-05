@@ -346,7 +346,50 @@ public class SolicitarDatos extends Validaciones{
 	}
 	
 	public static VisitaTerreno visitaTerreno() {
+		VisitaTerreno visita;
+		int numero,idVisitaTerreno,run;
+		String input,lugar,comentarios;
+		LocalTime hora;
+		LocalDate fechaAccidente;
 		
+//ID Cliente
+		do {
+			numero =  pedirNumero("RUN Cliente");
+		} while ( ! Validaciones.run(numero) );
+		run = numero;
+//ID Visita Terreno
+		do {
+			numero =  pedirNumero("Identificador visita en terreno");
+		} while ( ! Validaciones.visitaID(numero) );
+		idVisitaTerreno = numero;
+//Fecha Accidente
+		
+		fechaAccidente = pedirFecha("Fecha Accidente");
+		
+//Hora accidente
+		hora = pedirHora();
+		//lugar
+		do {
+			input = pedirTexto("Lugar");
+		} while ( ! Validaciones.lugar(input) );
+		lugar = input;
+		//comentarios
+		do {
+			input = pedirTexto("Detalle");
+		} while ( ! Validaciones.comentarios(input) );
+		comentarios = input;
+		
+		visita = new VisitaTerreno(
+				idVisitaTerreno,
+				run,
+				fechaAccidente,
+				hora,
+				lugar,
+				comentarios
+				);
+				
+		
+		return visita;		
 	}
 	
 	public static Revision revision() {
@@ -360,23 +403,23 @@ public class SolicitarDatos extends Validaciones{
 		} while ( ! Validaciones.revisionID(numero) );
 		idRevision = numero;
 		
-		//id visita en terreno
+//id visita en terreno
 		
 		do {
 			numero =  pedirNumero("Identificador visita en terreno");
 		} while ( ! Validaciones.revisionID(numero) );
 		idVisitaTerreno = numero;
 		
-		//nombre min 10 max 50
+//nombre min 10 max 50
 		do {
-			input = pedirTexto("Detalle");
+			input = pedirTexto("Nombre Revision");
 		} while ( ! Validaciones.nombreRevision(input) );
 		nombreRevision = input;
 		
-		//detalle para revisar 100 max
+//detalle para revisar 100 max
 		
 		do {
-			input = pedirTexto("Detalle");
+			input = pedirTexto("Detalle Revision");
 		} while ( ! Validaciones.detalle(input) );
 		detalle = input;
 		

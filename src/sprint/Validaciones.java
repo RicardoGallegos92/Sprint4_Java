@@ -194,22 +194,22 @@ public class Validaciones {
 	
 //______________________Revision_________________
 	
-		public static boolean revisionID (int id){
-			if ( Integer.signum(id) != -1 ) {
-				return true;
-			}
-			return false;
+	public static boolean revisionID (int id){
+		if ( Integer.signum(id) != -1 ) {
+			return true;
 		}
-		
-		public static boolean nombreRevision(String nRevision) {
-			return largoValido(nRevision,10,50);
-		}
+		return false;
+	}
+	
+	public static boolean nombreRevision(String nRevision) {
+		return largoValido(nRevision,10,50);
+	}
 
-		public static boolean detalle(String detalle) {
-			return largoValido (detalle,1,100);
-		}
-		
-		public static boolean estadoRevision( int estado ) {
+	public static boolean detalle(String detalle) {
+		return largoValido (detalle,1,100);
+	}
+	
+	public static boolean estadoRevision( int estado ) {
 			switch (estado) {
 				case 1:
 				case 2:
@@ -219,6 +219,25 @@ public class Validaciones {
 			return false;
 		}
 
+//___________________Visita Terreno_______________
+	
+	public static boolean visitaID(int id){
+		if ( Integer.signum(id) != -1 ) {
+			return true;
+		}
+		return false;
+	}
+	
+	public static boolean fechaAccidente(String fechaAccidente) {
+		return fechaValida(fechaAccidente);
+	}
 
+	public static boolean lugar(String lugar) {
+		return largoValido(lugar,10,50);
+	}
+	
+	public static boolean comentarios(String comentarios) {
+		return largoValido(comentarios,1,100);
+	}
 
 }

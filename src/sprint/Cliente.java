@@ -101,9 +101,7 @@ public class Cliente extends Usuario {
 		this.visitas = visitas;
 	}
 //---------------------------------------------------------------------------
-	
-	public String 
-	
+
 	@Override
 	public String toString() {
 		return "Cliente:\n"

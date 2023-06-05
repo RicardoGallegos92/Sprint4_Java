@@ -46,55 +46,42 @@ public class Capacitacion {
 	public String getDia() {
 		return dia;
 	}
-
 	public void setDia(String dia) {
 		this.dia = dia;
 	}
-
 	public LocalTime getHora() {
 		return hora;
 	}
-
 	public void setHora(LocalTime hora) {
 		this.hora = hora;
 	}
-
 	public String getLugar() {
 		return lugar;
 	}
-
 	public void setLugar(String lugar) {
 		this.lugar = lugar;
 	}
-
 	public int getRutCliente() {
 		return rutCliente;
 	}
-
 	public void setRutCliente(int rutCliente) {
 		this.rutCliente = rutCliente;
 	}
-
 	public int getid() {
 		return id;
 	}
-
 	public void setid(int id) {
 		this.id = id;
 	}
-
 	public int getCantidadAsistentes() {
 		return cantidadAsistentes;
 	}
-
 	public void setCantidadAsistentes(int cantidadAsistentes) {
 		this.cantidadAsistentes = cantidadAsistentes;
 	}
-
 	public double getDuracion() {
 		return duracion;
 	}
-
 	public void setDuracion(double duracion) {
 		this.duracion = duracion;
 	}
