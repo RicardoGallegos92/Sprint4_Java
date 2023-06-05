@@ -6,10 +6,14 @@ import java.util.Scanner;
 public class Contenedor extends SolicitarDatos{
 	private ArrayList<Usuario> asesorias;
 	private ArrayList<Capacitacion> capacitaciones;
+	private ArrayList<Accidente> accidentes;
+	private ArrayList<VisitaTerreno> visitas;
 
 	public Contenedor() {
 		this.asesorias = new ArrayList<Usuario>();
 		this.capacitaciones = new ArrayList<Capacitacion>();
+		this.accidentes = new ArrayList<Accidente>();
+		this.visitas = new ArrayList<VisitaTerreno>();
 	}
 	
 // funciona
@@ -28,10 +32,11 @@ public class Contenedor extends SolicitarDatos{
 	public void almacenarCapacitacion () {
 		capacitaciones.add(super.capacitacion());
 	}
-// NO funca 
+// funciona 
 	public void eliminaUsuario () {
 		int run;
 		do {
+			System.out.println("Ingrese el Rut a eliminar:");
 			try {
 				run = Integer.parseInt( new Scanner(System.in).nextLine() );
 				break;
@@ -99,4 +104,15 @@ public class Contenedor extends SolicitarDatos{
 		}
 	}
 
+	public void crearAccidente () {
+//	Agregar Metodo
+		this.accidentes.add(super.accidente());
+	}
+	
+	public void crearVisitaTerreno () {
+//	Agregar Metodos
+		this.visitas.add(super.visitaTerreno());
+	}
+	
+	
 }

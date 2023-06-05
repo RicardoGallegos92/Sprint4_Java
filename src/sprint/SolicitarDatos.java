@@ -143,7 +143,7 @@ public class SolicitarDatos extends Validaciones{
 		
 // 7 - sist salud 1, 2 (obligatorio)
 		do {
-			numero =  pedirNumero("[1] Fonasa\n[2] Isapre\nSistema de Salud:");
+			numero =  pedirNumero("[1] Fonasa\n[2] Isapre\nSistema de Salud");
 		} while ( ! Validaciones.clienteSistSalud(numero) );
 		datos.add(numero);
 
@@ -295,5 +295,12 @@ public class SolicitarDatos extends Validaciones{
 		return capa;
 	}
 
+	public static Accidente accidente() {
+		
+	}
+	
+	public static VisitaTerreno visitaTerreno() {
+		
+	}
 
 }

@@ -15,7 +15,7 @@ public class Usuario implements IAsesoria{
 	}
 	
 	public Usuario() {}
-// Setter y Getter
+//______________Setter y Getter_______________
 	public String getNombres() {
 		return nombres;	
 	}

@@ -10,9 +10,8 @@ public class SubMenu {
 		do {
 			System.out.println("*******************************");
 			System.out.println("*[1] Nuevo Cliente            *");
-			System.out.println("*[2] Crear Capacitacion       *");
-			System.out.println("*[3] Crear Accidente          *");
-			System.out.println("*[4] Crear Visita a Terreno   *");
+			System.out.println("*[2] Crear Accidente          *");
+			System.out.println("*[3] Crear Visita a Terreno   *");
 //			System.out.println("*                             *");
 			System.out.println("*******************************");
 			System.out.println("*[9] Salir                    *");
@@ -24,12 +23,9 @@ public class SubMenu {
 					cont.almacenarCliente();
 					break;
 				case 2:
-					System.out.println("Crear Capacitación...");
-					break;
-				case 3:
 					System.out.println("Crear Accidente...");
 					break;
-				case 4:
+				case 3:
 					System.out.println("Crear Visita a Terreno...");
 					break;
 				case 9:
