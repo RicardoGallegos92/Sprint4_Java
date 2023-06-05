@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Contenedor extends SolicitarDatos{
-	private ArrayList<IAsesoria> asesorias;
+	private ArrayList<Usuario> asesorias;
 	private ArrayList<Capacitacion> capacitaciones;
 
 	public Contenedor() {
-		this.asesorias = new ArrayList<IAsesoria>();
+		this.asesorias = new ArrayList<Usuario>();
 		this.capacitaciones = new ArrayList<Capacitacion>();
 	}
 	
@@ -50,7 +50,7 @@ public class Contenedor extends SolicitarDatos{
 	}
 // funciona
 	public void listarUsuarios () {
-		for ( IAsesoria individuo : asesorias ) {
+		for ( Usuario individuo : asesorias ) {
 			System.out.println( individuo.toString() );
 		}
 	}

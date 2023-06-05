@@ -117,7 +117,7 @@ public class SolicitarDatos extends Validaciones{
 		return datos;
 	}
 	
-	public static IAsesoria cliente() {
+	public static Usuario cliente() {
 		Cliente cliente;
 		String input;
 		int numero;
@@ -176,7 +176,7 @@ public class SolicitarDatos extends Validaciones{
 		return cliente;
 	}
 
-	public static IAsesoria profesional() {
+	public static Usuario profesional() {
 		Profesional profesional;
 		String input;
 		LocalDate fecha;
@@ -207,7 +207,7 @@ public class SolicitarDatos extends Validaciones{
 		return profesional;
 	}
 	
-	public static IAsesoria admin() {
+	public static Usuario admin() {
 		Administrativo admin;
 		String input;
 		ArrayList<Object> datos = new ArrayList<Object>();
