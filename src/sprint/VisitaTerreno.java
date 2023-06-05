@@ -2,8 +2,10 @@ package sprint;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 public class VisitaTerreno {
+	private ArrayList<Revision> revisiones;
 
 	private String id,
 							lugar,
@@ -20,6 +22,7 @@ public class VisitaTerreno {
 		this.hora = hora;
 		this.lugar = lugar;
 		this.comentarios = comentarios;
+		this.revisiones = new ArrayList<Revision>();
 	}
 
 	public VisitaTerreno() {}

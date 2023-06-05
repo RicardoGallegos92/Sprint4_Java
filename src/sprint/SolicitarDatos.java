@@ -296,10 +296,55 @@ public class SolicitarDatos extends Validaciones{
 	}
 
 	public static Accidente accidente() {
+		String input;
+		int id, rutCliente, numero;
+		String lugar, origen, consecuencias;
+		LocalDate fechaAccidente;
+		LocalTime hora;
+		Accidente accident;
+// ID
+		do {
+			numero =  pedirNumero("Identificador");
+		} while ( ! Validaciones.capacitacionID(numero) );
+		id = numero;
+// rutCliente
+		do {
+			numero =  pedirNumero("RUT Cliente");
+		} while ( ! Validaciones.run(numero) );
+		rutCliente = numero;
+// fechaAccidente
+		fechaAccidente = pedirFecha("Fecha Accidente");
+// horaAccidente
+		hora = pedirHora();
+// lugar
+		do {
+			input = pedirTexto("Lugar");
+		} while ( ! Validaciones.accidenteLugar( input ) );
+		lugar = input;
+// origen
+		do {
+			input = pedirTexto("Origen");
+		} while ( ! Validaciones.accidenteOrigen( input ) );
+		origen = input;
+// consecuencias
+		do {
+			input = pedirTexto("Consecuencias");
+		} while ( ! Validaciones.accidenteConsecuencias( input ) );
+		consecuencias = input;
 		
+		accident = new Accidente(
+						id,
+						
+						);
+		
+		return accident;		
 	}
 	
 	public static VisitaTerreno visitaTerreno() {
+		
+	}
+	
+	public static Revision revision() {
 		
 	}
 

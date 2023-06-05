@@ -71,7 +71,6 @@ public class Validaciones {
 		return rutValido( run );
 	}
 
-	
 //_________________Usuario______________________
 	public static boolean usuarioNombre(String nombre) {
 		return largoValido(nombre, 10,  50);
