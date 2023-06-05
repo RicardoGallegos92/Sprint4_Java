@@ -2,25 +2,19 @@ package sprint;
 
 public class Cliente extends Usuario {
 
-	private int rut,
-		sistSalud,
-		edad;
+	private int sistSalud;
 
-	private String nombres,
-				apellidos,
+	private String apellidos,
 				telefono,
 				afp,
 				direccion,
 				comuna;
 	
-	public Cliente(String nombre, String fechaNacimiento, int run, int rut, 
-			int sistSalud, int edad, String nombres, String apellidos, 
-			String telefono, String afp, String direccion, String comuna) {
-		super(nombre, fechaNacimiento, run);
-		this.rut = rut;
+	public Cliente(String nombres, String fechaNacimiento, int run,
+			String apellidos, String telefono, String afp, int sistSalud,
+			String direccion, String comuna) {
+		super(nombres, fechaNacimiento, run);
 		this.sistSalud = sistSalud;
-		this.edad = edad;
-		this.nombres = nombres;
 		this.apellidos = apellidos;
 		this.telefono = telefono;
 		this.afp = afp;
@@ -31,7 +25,12 @@ public class Cliente extends Usuario {
 	public Cliente () {}
 
 	public String obtenerNombre() {
-		return nombres + " " + apellidos;
+		return super.getNombres() + " " + apellidos;
+	}
+	
+	public int calcularEdad() {
+//		return LocalDate.now() - super.getFechaNacimiento();
+		return 1;
 	}
 
 	public String obtenerSistemaSalud() {
@@ -40,34 +39,14 @@ public class Cliente extends Usuario {
 				return "Sistema Fonasa";
 			case 2:
 				return "Sistema Isapre";
-			default:
-				return "Registro inválido";
 		}
 	}
 //---------------------------------------------------------------------------
-	public int getRut() {
-		return rut;
-	}
-	public void setRut(int rut) {
-		this.rut = rut;
-	}
 	public int getSistSalud() {
 		return sistSalud;
 	}
 	public void setSistSalud(int sistSalud) {
 		this.sistSalud = sistSalud;
-	}
-	public int getEdad() {
-		return edad;
-	}
-	public void setEdad(int edad) {
-		this.edad = edad;
-	}
-	public String getNombres() {
-		return nombres;
-	}
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
 	}
 	public String getApellidos() {
 		return apellidos;
@@ -102,16 +81,17 @@ public class Cliente extends Usuario {
 //---------------------------------------------------------------------------
 	@Override
 	public String toString() {
-		return "Cliente:\nRut: " + rut
-				+ "\nSistSalud: " + sistSalud
-				+ "\nEdad: " +	edad
-				+ "\nNombres: " + nombres
+		return "Cliente:\n"
+				+ super.toString()
 				+ "\nApellidos: " + apellidos
+				+ "\nSistSalud: " + sistSalud
+				+ "\nEdad: " +	calcularEdad()
 				+ "\nTelefono: " + telefono
 				+ "\nAFP: " + afp
 				+ "\nDireccion: " + direccion
 				+ "\nComuna: " + comuna
-				+"\n----------------------------------------------------------------";
+				+ "\n----------------------------------------------------------------"
+				;
 	}
 	
 	@Override

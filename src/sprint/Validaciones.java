@@ -11,7 +11,6 @@ public class Validaciones {
 // Validacion general por longitud si cumple los parametros ]min , max[
 	// min será 0 si el campo es obligatorio, 1 si no lo es.
 	public static boolean largoValido(String texto, int largoMinimo, int largoMaximo) {
-		texto = texto.trim();
 		if ( texto.length() > largoMinimo-1 && texto.length() < largoMaximo+1 ) {
 			return true;
 		}
@@ -20,7 +19,7 @@ public class Validaciones {
 
 // Podemos agregar funcion para validar con DV
 	public static boolean rutValido(int rut) {
-		if ( rut > 1000000 && rut < 100000000 ) {
+		if ( rut > 1000000 && rut < 100000000-1 ) {
 			return true;
 		}
 		return false;		
@@ -57,7 +56,6 @@ public class Validaciones {
 	}
 
 	public static boolean usuarioFechaNacimiento(String fechaNacimiento) {
-		fechaNacimiento = fechaNacimiento.trim();
 		return fechaValida(fechaNacimiento);
     }
 
@@ -119,17 +117,7 @@ public class Validaciones {
 	public static boolean clienteNombres(String nombres) {
 		return largoValido( nombres, 5, 30 );
 	}
-	
-	public static boolean clienteEdad(int edad) {
-		if (edad >= 18 && edad < 150) {
-			return true;
-		}
-		return false;
-	}
-	
-	public static boolean  clienteRut(int rut) {
-		return rutValido(rut);
-	}
+
 	
 //_______________VisitaTerreno________________
 	
@@ -169,7 +157,6 @@ public class Validaciones {
 	}
 	
 	public static boolean capacitacionHora(String hora){
-		hora = hora.trim();
 		return horaValida(hora);
 	}
 	
@@ -188,4 +175,5 @@ public class Validaciones {
 		return false;
 	}
 
+	
 }

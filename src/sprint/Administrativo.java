@@ -32,9 +32,11 @@ public class Administrativo extends Usuario{
 	
 	@Override
 	public String toString() {
-		return "\nAdministrativo \nArea: " + area
+		return "Administrativo:\n"
+				+ super.toString()
+				+ "\nArea: " + area
 				+ "\nExperienciaPrevia: " + experienciaPrevia
-				+"\n----------------------------------------------------------------";
+				+ "\n----------------------------------------------------------------";
 	}	
 	
 	@Override

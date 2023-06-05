@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class Menu {
 	public static void menu() {
-//		Contenedor sintenedor = new Contenedor();
+		Contenedor sintenedor = new Contenedor();
 		int opcion = 0;
 		Scanner scan = new Scanner(System.in);
 		do {
 			System.out.println("*******************************");
-			System.out.println("*[1] Almacer Cliente          *");
+			System.out.println("*[1] Almacenar Cliente        *");
 			System.out.println("*[2] Almacenar Profesional    *");
 			System.out.println("*[3] Almacenar Administrativo *");
 			System.out.println("*[4] Almacenar Capacitacion   *");
@@ -24,39 +24,40 @@ public class Menu {
 				switch ( opcion ) {
 				case 1:
 //					System.out.println("Falta funcion Cliente");
-					SolicitarDatos.cliente();
-//					sintenedor.almacenarCliente();
+//					SolicitarDatos.cliente();
+					sintenedor.almacenarCliente();
+					System.out.println( sintenedor.toString() );
 					break;
 				case 2:
 //					System.out.println("Falta funcion Profesional");
-					SolicitarDatos.profesional();
-//					sintenedor.almacenarProfesional();
+//					SolicitarDatos.profesional();
+					sintenedor.almacenarProfesional();
 					break;
 				case 3:
 //					System.out.println("Falta funcion  Admin");
-					SolicitarDatos.admin();
-//					sintenedor.almacenarAdministrativo();
+//					SolicitarDatos.admin();
+					sintenedor.almacenarAdministrativo();
 					break;
 				case 4:
 //					System.out.println("Falta funcion Capacitacion ");
-					SolicitarDatos.capacitacion();
-//					sintenedor.almacenarCapacitacion();
+//					SolicitarDatos.capacitacion();
+					sintenedor.almacenarCapacitacion();
 					break;
 				case 5:
-					System.out.println("Falta funcion Eliminar User");
-//					sintenedor.eliminarUsuario();
+//					System.out.println("Falta funcion Eliminar User");
+					sintenedor.eliminaUsuario();
 					break;
 				case 6:
-					System.out.println("Falta funcion Lista User");
-//					sintenedor.listarUsuario();
+//					System.out.println("Falta funcion Lista User");
+					sintenedor.listarUsuarios();
 					break;
 				case 7:
-					System.out.println("Falta funcion Lista por Tipo");
-//					sintenedor.listarUsuarioTipo();
+//					System.out.println("Falta funcion Lista por Tipo");
+					sintenedor.listarUsuariosTipo();
 					break;
 				case 8:
-					System.out.println("Falta funcion Capacitaciones");
-//					sintenedor.listarCapacitacion();
+//					System.out.println("Falta funcion Capacitaciones");
+					sintenedor.listarCapacitacion();
 					break;
 				case 9:
 					System.out.println("Adiosin ;D");

@@ -13,7 +13,6 @@ public class Accidente {
 	private String origen;
 	private String consecuencias;
 	
-	
 	//Constructors
 	
 	public Accidente(int idAccidente,String fechaAccidente,String horaAccidente,String lugar,String origen,String consecuencias ) {
@@ -45,8 +44,6 @@ public class Accidente {
 		{
 			this.idAccidente = idAccidente;
 		}
-		
-		
 	}
 
 	public String getFechaAccidente() {

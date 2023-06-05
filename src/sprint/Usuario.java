@@ -5,12 +5,12 @@ import java.time.Period;
 
 public class Usuario implements IAsesoria{
 
-	private String nombre,
+	private String nombres,
 							fechaNacimiento;
 	private int run;
 	
-	public Usuario(String nombre, String fechaNacimiento, int run) {
-		this.nombre = nombre;
+	public Usuario(String nombres, String fechaNacimiento, int run) {
+		this.nombres = nombres;
 		this.fechaNacimiento = fechaNacimiento;
 		this.run = run;
 	}
@@ -22,11 +22,11 @@ public class Usuario implements IAsesoria{
 		Period tiempoTranscurrido = Period.between(nacimiento, LocalDate.now());
 		return tiempoTranscurrido.getYears() + " años";
 	}
-	public String getNombre() {
-		return nombre;	
+	public String getNombres() {
+		return nombres;	
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setNombres(String nombres) {
+		this.nombres = nombres;
 	}
 	public String getFechaNacimiento() {
 		return fechaNacimiento;
@@ -43,12 +43,12 @@ public class Usuario implements IAsesoria{
 //---------------------------------------------------------------------------
 	@Override
 	public void analizarUsuario() {
-		System.out.println("Nombre: "+this.nombre);
+		System.out.println("Nombres: "+this.nombres);
 	}
 
 	@Override
 	public String toString() {
-		return "Usuario:\nNombre: " + nombre
+		return "Nombres: " + nombres
 					+ "\nFechaNacimiento: "	+ fechaNacimiento
 					+ "\nRun: " + run
 //					+"\n----------------------------------------------------------------"
