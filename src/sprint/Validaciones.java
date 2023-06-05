@@ -24,31 +24,53 @@ public class Validaciones {
 		}
 		return false;		
 	}
+
+	public static LocalTime hora(String hora) {
+		DateTimeFormatter format = DateTimeFormatter.ISO_TIME;
+		LocalTime horaParseada = LocalTime.parse(hora, format);
+//		System.out.println(horaParseada);
+		return horaParseada;
+	}
 	
 	public static boolean horaValida(String hora) {
 		try {
 			DateTimeFormatter format = DateTimeFormatter.ISO_TIME;
 			LocalTime horaParseada = LocalTime.parse(hora, format);
-			System.out.println(horaParseada);
+//			System.out.println(horaParseada);
 			return true;
 		} catch ( Exception e ) {
 			return false;
 		}
 	}
-	
+
+	public static LocalDate fecha(String fecha) {
+		DateTimeFormatter f = DateTimeFormatter
+				.ofPattern("dd/MM/uuuu")
+				.withResolverStyle(ResolverStyle.STRICT);
+        LocalDate fechaParseada = LocalDate.parse(fecha, f);
+//        System.out.println(d.format(f));
+        return fechaParseada;
+	}
+
 	public static boolean fechaValida(String fecha) {
 		try {
 			DateTimeFormatter f = DateTimeFormatter
 					.ofPattern("dd/MM/uuuu")
 					.withResolverStyle(ResolverStyle.STRICT);
 	        LocalDate d = LocalDate.parse(fecha, f);
-	        System.out.println(d.format(f));
+//	        System.out.println(d.format(f));
 	        return true;
 		} catch ( Exception e ) {
 			System.out.println("No sea payaso");
 			return false;
 		}
 	}
+
+//_________________Comunes______________________
+	public static boolean run( int run ) {
+		return rutValido( run );
+	}
+
 	
 //_________________Usuario______________________
 	public static boolean usuarioNombre(String nombre) {
@@ -58,10 +80,6 @@ public class Validaciones {
 	public static boolean usuarioFechaNacimiento(String fechaNacimiento) {
 		return fechaValida(fechaNacimiento);
     }
-
-	public static boolean usuarioRun(int run) {
-		return rutValido( run );
-	}
 
 //_______________Administrativo_________________
 	public static boolean admExperiencia(String experienciaPrevia) {
@@ -128,23 +146,17 @@ public class Validaciones {
 	public static boolean visitaTerrenoLugar(String lugar) {
 		return largoValido( lugar, 10, 50);
 	}
-	
-	public void visitaTerrenoHora(String hora) {
-		if ( horaValida(hora) ) {
-			System.out.println("Hora válida");
-		}
-	}
-	
-	public static boolean visitaTerrenoRut(int rutCliente) {
-		return rutValido(rutCliente);
-	}
+
 	
 //________________Capacitacion________________
 
-	public static boolean capacitacionRut(int rut){
-		return rutValido( rut );
+	public static boolean capacitacionID(int id) {
+		if ( Integer.signum(id) != -1 ) {
+			return true;
+		}
+		return false;
 	}
-	
+
 	public static boolean capacitacionDia(String texto){
 		String[] dias = { "Lunes", "Martes", "Miercoles",
 				"Jueves", "Viernes", "Sabado", "Domingo" };
@@ -156,24 +168,31 @@ public class Validaciones {
 		return false;
 	}
 	
-	public static boolean capacitacionHora(String hora){
-		return horaValida(hora);
-	}
-	
 	public static boolean capacitacionLugar(String lugar){
 		return largoValido(lugar, 10, 50);
 	}
-	
-	public static boolean capacitacionDuracion(String duracion){
-		return largoValido(duracion, 1, 70);
-	}
-	
-	public static boolean capacitacionCantAsistentes(int asistentes){
+
+	public static boolean capacitacionCantAsistentes(double asistentes){
 		if ( asistentes > 0 && asistentes < 1001 ) {
 			return true;
 		}
 		return false;
 	}
 
+//______________Accidente______________________
 	
+	public static boolean accidenteConsecuencias(String consecuencias) {
+		return largoValido(consecuencias,1,100);
+	}
+
+	public static boolean accidenteOrigen(String origen) {
+		return largoValido(origen, 1, 100);
+	}
+	
+	public static boolean accidenteLugar(String lugar) {
+		return largoValido(lugar, 10, 50);
+	}
+
+
+
 }
