@@ -334,6 +334,7 @@ public class SolicitarDatos extends Validaciones{
 		
 		accident = new Accidente(
 						id,
+						rutCliente,
 						
 						);
 		
