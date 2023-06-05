@@ -1,6 +1,8 @@
 package sprint;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.ResolverStyle;
 
 public class Profesional extends Usuario{
 
@@ -45,9 +47,11 @@ public class Profesional extends Usuario{
 	
 	@Override
 	public void analizarUsuario() {
+		DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/uuuu")
+				.withResolverStyle(ResolverStyle.STRICT);
 		super.analizarUsuario();
-		System.out.println("Titulo = " + getTitulo()
-											+ "\nFecha Ingreso = " + getFechaIngreso());	
+		System.out.println("Titulo: " + getTitulo()
+									+ "\nFecha Ingreso: " + getFechaIngreso().format(f));	
 	}	
 	
 }

@@ -12,7 +12,6 @@ public class SubMenu {
 			System.out.println("*[1] Nuevo Cliente            *");
 			System.out.println("*[2] Registro Accidente       *");
 			System.out.println("*[3] Registro Visita a Terreno*");
-//			System.out.println("*                             *");
 			System.out.println("*******************************");
 			System.out.println("*[9] Salir                    *");
 			System.out.println("*******************************");

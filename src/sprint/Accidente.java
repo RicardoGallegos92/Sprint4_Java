@@ -2,6 +2,8 @@ package sprint;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.ResolverStyle;
 
 public class Accidente {
 
@@ -75,10 +77,12 @@ public class Accidente {
 //________________________________________________________
 	@Override
 	public String toString() {
+		DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/uuuu")
+				.withResolverStyle(ResolverStyle.STRICT);
 		return "Accidente:\n"
 				+ "\nID Accidente: " + id
 				+ "\nRun Cliente: " + rutCliente
-				+ "\nFecha Accidente: " + fechaAccidente
+				+ "\nFecha Accidente: " + fechaAccidente.format(f)
 				+ "\nhora Accidente: "+ horaAccidente
 				+ "\nLugar: " + lugar
 				+ "\nOrigen: " + origen

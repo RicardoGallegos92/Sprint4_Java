@@ -48,7 +48,7 @@ public class Validaciones {
 				.ofPattern("dd/MM/uuuu")
 				.withResolverStyle(ResolverStyle.STRICT);
         LocalDate fechaParseada = LocalDate.parse(fecha, f);
-//        System.out.println(d.format(f));
+//        System.out.println(fechaParseada.format(f));
         return fechaParseada;
 	}
 

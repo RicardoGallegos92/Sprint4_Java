@@ -1,6 +1,9 @@
 package sprint;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.ResolverStyle;
 
 public class Usuario implements IAsesoria{
 
@@ -48,10 +51,11 @@ public class Usuario implements IAsesoria{
 
 	@Override
 	public String toString() {
+		DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/uuuu")
+				.withResolverStyle(ResolverStyle.STRICT);
 		return "Nombres: " + nombres
-					+ "\nFechaNacimiento: " + fechaNacimiento
-					+ "\nRun: " + run
-					+ "\n_______________________________________";
+					+ "\nFechaNacimiento: " + fechaNacimiento.format(f)
+					+ "\nRun: " + run;
 	}
 
 }

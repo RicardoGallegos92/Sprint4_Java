@@ -16,7 +16,7 @@ public class SolicitarDatos extends Validaciones{
 		String input;
 		
 		do {
-			input = pedirTexto("[HH:MM]\nHora:"); 
+			input = pedirTexto("[HH:MM]\nHora"); 
 		} while ( ! Validaciones.horaValida( input ) );
 		
 		hora = Validaciones.hora(input);
@@ -79,7 +79,7 @@ public class SolicitarDatos extends Validaciones{
 				numero =  Integer.parseInt( input );
 				seguir = false;
 			} catch ( Exception e ) {
-				System.out.println("formato erróneo");
+				System.out.println("formato erroneo");
 			}
 		} while ( seguir );
 //		scan.close();
@@ -149,7 +149,7 @@ public class SolicitarDatos extends Validaciones{
 
 // 8 - direccion
 		do {
-			input = pedirTexto("Dirección");
+			input = pedirTexto("Direccion");
 		} while ( ! Validaciones.clienteDireccion( input ) );
 		datos.add(input);
 
@@ -273,7 +273,7 @@ public class SolicitarDatos extends Validaciones{
 		datos.add(input);
 		
 //	6 - Duración: 1-70  tiempo
-		duracion = pedirDoble("[a,b] hrs.\nDuración");
+		duracion = pedirDoble("[a,b] hrs.\nDuracion");
 		datos.add(duracion);
 		
 //	7 - Cantidad de asistentes: obligatorio, 1-1000

@@ -1,6 +1,8 @@
 package sprint;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.ResolverStyle;
 import java.util.ArrayList;
 
 public class Cliente extends Usuario {
@@ -104,10 +106,12 @@ public class Cliente extends Usuario {
 
 	@Override
 	public String toString() {
+		DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/uuuu")
+				.withResolverStyle(ResolverStyle.STRICT);
 		return "Cliente:\n"
 				+ "\nNombre: " + obtenerNombre()
 				+ "\nRUN: " + super.getRun()
-				+ "\nFecha Nacimiento: " + super.getFechaNacimiento()
+				+ "\nFecha Nacimiento: " + super.getFechaNacimiento().format(f)
 				+ "\nEdad: " +	super.mostrarEdad()
 				+ "\nSistSalud: " + obtenerSistemaSalud()
 				+ "\nTelefono: " + telefono

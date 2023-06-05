@@ -2,6 +2,8 @@ package sprint;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.ResolverStyle;
 import java.util.ArrayList;
 
 public class VisitaTerreno {
@@ -71,12 +73,14 @@ public class VisitaTerreno {
 	
 	@Override
 	public String toString() {
+		DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/uuuu")
+				.withResolverStyle(ResolverStyle.STRICT);
 		return "VisitaTerreno:"
 				+ "\nID :" + id
 				+ "\nLugar: " + lugar
 				+ "\nComentarios: " + comentarios
 				+ "\nRUT: " + rut
-				+ "\nDia=" + dia
+				+ "\nDia=" + dia.format(f)
 				+ "\nHora=" + hora
 				+ "\n_______________________________________";
 	}
