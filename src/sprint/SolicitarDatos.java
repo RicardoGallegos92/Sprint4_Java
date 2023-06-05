@@ -23,16 +23,16 @@ public class SolicitarDatos extends Validaciones{
 		return hora;
 	}
 	
-	private static LocalDate pedirFecha() {
+	private static LocalDate pedirFecha(String pedir) {
 		LocalDate fecha;
 		String input;
-		
+
 		do {
-			input = pedirTexto("[DD/MM/AAAA]\nFecha Nacimiento"); 
+			input = pedirTexto("[DD/MM/AAAA]\n"+pedir); 
 		} while ( ! Validaciones.fechaValida( input ) );
-		
+
 		fecha = Validaciones.fecha(input);
-		
+
 		return fecha;
 	}
 	
@@ -99,7 +99,7 @@ public class SolicitarDatos extends Validaciones{
 
 // 2 - fecha nacimiento DD/MM/YYYY (obligatorio)
 		
-		fecha = pedirFecha();
+		fecha = pedirFecha("Fecha de Nacimiento");
 		datos.add(fecha);
 /*
 		do {
@@ -143,7 +143,7 @@ public class SolicitarDatos extends Validaciones{
 		
 // 7 - sist salud 1, 2 (obligatorio)
 		do {
-			numero =  pedirNumero("1) Fonasa / 2) Isapre\\nSistema de Salud");
+			numero =  pedirNumero("[1] Fonasa\n[2] Isapre\nSistema de Salud:");
 		} while ( ! Validaciones.clienteSistSalud(numero) );
 		datos.add(numero);
 
@@ -190,7 +190,7 @@ public class SolicitarDatos extends Validaciones{
 
 // 5 - fecha ingreso DD/MM/YYYY
 		
-		fecha = pedirFecha();
+		fecha = pedirFecha("Fecha de Ingreso");
 /*
 		do {
 			input = pedirTexto("[DD/MM/AAAA]\\n- Fecha de Ingreso");

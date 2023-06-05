@@ -5,38 +5,44 @@ import java.time.LocalTime;
 
 public class Accidente {
 
-	private int id;
+	private int id, rutCliente;
 	private LocalDate fechaAccidente;
 	private LocalTime horaAccidente;
 	private String lugar;
 	private String origen;
 	private String consecuencias;
 	
-	//Constructors
+//Constructors
 	
-	public Accidente(int id,LocalDate fechaAccidente,LocalTime horaAccidente,
-			String lugar,String origen,String consecuencias ) {
+	public Accidente(int id, int rutCliente, LocalDate fechaAccidente, LocalTime horaAccidente, String lugar,
+			String origen, String consecuencias) {
 		this.id = id;
+		this.rutCliente = rutCliente;
 		this.fechaAccidente = fechaAccidente;
 		this.horaAccidente = horaAccidente;
 		this.lugar = lugar;
 		this.origen = origen;
 		this.consecuencias = consecuencias;
-		
 	}
 	
 	public Accidente() {}
 
+//Getter && Setter
 
-	//Getter && Setter
-	
-	
 	public int getid() {
 		return id;
 	}
-
+	
 	public void setid(int id) {
 		this.id = id;
+	}
+
+	public int getRutCliente() {
+		return rutCliente;
+	}
+
+	public void setRutCliente(int rutCliente) {
+		this.rutCliente = rutCliente;
 	}
 
 	public LocalDate getFechaAccidente() {
@@ -82,6 +88,7 @@ public class Accidente {
 	public String toString() {
 		return "Accidente:\n"
 				+ "\nID Accidente: " + id
+				+ "\nRun Cliente: " + rutCliente
 				+ "\nFecha Accidente: " + fechaAccidente
 				+ "\nhora Accidente: "+ horaAccidente
 				+ "\nLugar: " + lugar

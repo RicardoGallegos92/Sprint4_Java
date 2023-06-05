@@ -16,7 +16,7 @@ public class Administrativo extends Usuario{
 
 	public Administrativo(){};
 	
-//-------------------------------------Validaciones--------	
+//-------------------------------------Validaciones---------------------	
 
 //---------------------------------------------------------------------------
 	public String getArea() {

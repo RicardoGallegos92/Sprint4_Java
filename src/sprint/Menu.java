@@ -23,7 +23,8 @@ public class Menu {
 				opcion =  Integer.parseInt( scan.nextLine() );
 				switch ( opcion ) {
 				case 1:
-					sintenedor.almacenarCliente();
+					SubMenu.subMenu(sintenedor);
+//					sintenedor.almacenarCliente();
 //					System.out.println( sintenedor.toString() );
 					break;
 				case 2:
